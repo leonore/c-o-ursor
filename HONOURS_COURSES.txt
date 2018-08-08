@@ -1,0 +1,231 @@
+
+N Advanced Networks Communications (H)
+A ANC
+S SYSTEMS
+C 
+R NS
+
+N Advanced Network Systems (H)
+A ANS
+S SYSTEMS
+C 
+R
+# Prerequisites: NS, OS, SP (starting next year)?
+
+N Advanced Software Engineering Practices (H)
+A ASEP
+S SYSTEMS
+C
+R 
+# Prerequisites: JP2, OOSE, PSD, Placement (can be unassessed)
+
+N Advanced System Programming (M)
+A ASP
+S SYSTEMS
+C ITA, DL
+R SP, OS, NS, FP
+
+N Algorithmics I (H)
+A ALGI
+S MANDATORY
+C
+R
+
+N Algorithmics II (H)
+A ALGII
+S THEORY
+C DPT
+R
+
+N Artificial Intelligence (H)
+A AI
+S DATASCIENCE
+C RS, RF
+R DF
+
+N Big Data (H)
+A BD
+S DATASCIENCE
+C 
+R DF, DB
+# DPT is strongly recommended
+
+N Computational Social Intelligence (H)
+A CSI
+S HUMANCOMPUTERINTERACTION
+C 
+R 
+# Recommended: AI, DF, ML
+
+N Computer Architecture (H)
+A CA
+S SYSTEMS
+C 
+R OS
+
+N Computer Vision Methods and Applications (H)
+A CVMA
+S DATASCIENCE
+C
+R DF
+
+N Constraint Programming (M)
+A CP
+S THEORY
+C CSF
+R
+
+N Cryptography and Secure Development (M)
+A CSD
+S SECURITY
+C ML, RF
+R CSFu
+
+N Cyber Security Forensics (M)
+A CSFo
+S SECURITY
+C CP
+R
+
+N Cyber Security Fundamentals (H)
+A CSFu
+S SECURITY
+C ITA
+R
+
+N Database Systems (H)
+A DB
+S DATASCIENCE
+C IR
+R 
+# Requires JP2, OOSE2, WAD2
+
+N Data Fundamentals (H)
+A DF
+S MANDATORY
+C
+R
+
+N Deep Learning (M)
+A DL
+S DATASCIENCE
+C ITA, ASP
+R DF, ML
+
+N Distributed Parallel Technologies (H)
+A DPT
+S SYSTEMS
+C ALGII
+R SP
+
+N Enterprise Cyber Security (M)
+A ECS
+S SECURITY
+C 
+R
+
+N Functional Programming (H)
+A FP
+S SYSTEMS, THEORY
+C 
+R
+
+N Human-Centred Security (M)
+A HCS
+S HUMANCOMPUTERINTERACTION
+C 
+R
+
+N Human Computer Interaction (H)
+A HCI
+S HUMANCOMPUTERINTERACTION
+C PL, TC, TD
+R IS
+
+N Information Retrieval (H)
+A IR
+S DATASCIENCE
+C DB
+R DF, TD
+
+N Interactive Systems (H)
+A IS
+S MANDATORY
+C 
+R
+
+N Machine Learning (H)
+A ML
+S DATASCIENCE, THEORY
+C CSD, RF
+R DF
+
+N Mobile Human-Computer Interaction (H)
+A MobHCI
+S HUMANCOMPUTERINTERACTION
+C TD
+R IS
+
+N Network Systems (H)
+A NS
+S SYSTEMS
+C 
+R SP
+# Prerequisites: ADS2, CS2, JP2, OOSE2. OS recommended
+
+N Operating Systems (H)
+A OS
+S SYSTEMS
+C 
+R SP
+# Prerequisites: ADS2, CS2, JP2, OOSE2. NS recommended
+
+N Programming Languages (H)
+A PL
+S THEORY
+C HCI
+R
+# Requires JP2, OOSE2
+
+N Recommender Systems (H)
+A RS
+S DATASCIENCE
+C AI, RF
+R DF, TD
+
+N Robotics Foundations (H)
+A RF
+S DATASCIENCE
+C AI, RS
+R DF
+
+N Safety Critical Systems (H)
+A SCS
+S SECURITY
+C
+
+N Systems Programming (H)
+A SP
+S MANDATORY
+C
+R
+
+N Text as Data (H)
+A TD
+S DATASCIENCE
+C MobHCI
+R DF
+
+N Theory of Computation (H)
+A TC
+S THEORY
+C HCI
+R ALGI
+
+N Web Science (H)
+A WS
+S DATASCIENCE
+C 
+R
+
+END
