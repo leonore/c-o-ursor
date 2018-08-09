@@ -2,7 +2,7 @@
 # I have an idea of what courses I want to take.
 # What can I pick?
 # Can you report any problems with my choices?
-# C-O-URSOR V0.1 -- reports any clashes and requirements
+# C-O-URSOR V0.2 -- reports any clashes and requirements, looks nicer
 
 
 # Storage structure for courses
@@ -40,7 +40,6 @@ def make_course(name, acronym, strand, clashes=None, req=None, comment=None):
 
 f = open("HONOURS_COURSES.txt", "r")
 lines = f.readlines()
-lines.pop(0) # removes first \n
 
 name, acronym, strand, clashes, req, comment = [None] * 6 # empty value init
 
@@ -72,12 +71,16 @@ strands = { "DATASCIENCE": 0,
            "HUMANCOMPUTERINTERACTION": 0,
            "THEORY": 0,
            "SYSTEMS": 0,
-           "SECURITY": 0 }
+           "SECURITY": 0,
+           "MANDATORY": 0 }
 courses = Course.courses
 choices = []
 
+for c1,c2,c3 in zip(courses[::3],courses[1::3], courses[2::3]):
+    print '{:<55}{:<55}{:<}'.format(c1,c2,c3)
+
 # USER INPUT
-print("This program assumes you have an idea of what courses you want to take during the semester.\n"
+print("\nThis program assumes you have an idea of what courses you want to take during the semester.\n"
       "Consult given course specs for more information about the available choices.\n")
 acronyms_input = raw_input("Please enter the acronyms of your courses of interests, comma separated: ").replace(" ", "").split(",")
 
@@ -89,8 +92,16 @@ for a in acronyms_input:
             choices.append(course)
             found = True
     if not found:
-        print("\nThe acronym " + a + " doesn't seem to match any courses.\n")
+        print("\nThe acronym " + a + " doesn't seem to match any courses.")
         acronyms_input.remove(a)
+
+# DECISION MAKING: STRANDS
+print("\nComputing results in relation to strands...")
+for choice in choices:
+    for s in choice.strand:
+        strands[s] += 1
+preferred = max(strands, key=strands.get)
+print("Your preferred strand seems to be " + preferred)
 
 # DECISION MAKING: CLASHES
 print("\nComputing results in relation to clashes...\n")
@@ -106,7 +117,7 @@ for choice1 in choices:
             done.append(choice1.acronym+choice2.acronym)
 
 if not clashes:
-    print("You don't have any clashes!\n")
+    print("You don't have any clashes!")
 
 
 # DECISION MAKING: REQUISITES
@@ -117,20 +128,13 @@ req_list = []
 for choice in choices:
     if choice.req:
         req_list = []
+        missing = True
         for req in choice.req:
             if req not in acronyms_input:
                 req_list.append(req)
-                suitable = False
-        print("You need to take " + str(req_list) + " for " + str(choice))
+                missing = suitable = False
+        if not missing:
+            print("You need to take " + str(req_list) + " for " + str(choice))
 
 if suitable:
-    print("You aren't missing any courses!\n")
-
-
-# DECISION MAKING: STRANDS
-print("\nComputing results in relation to strands...\n")
-for choice in choices:
-    for s in choice.strand:
-        strands[s] += 1
-preferred = max(strands, key=strands.get)
-print("Your preferred strand seems to be " + preferred)
+    print("You aren't missing any courses!")

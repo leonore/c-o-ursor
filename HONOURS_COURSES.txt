@@ -1,4 +1,3 @@
-
 N Advanced Networks Communications (H)
 A ANC
 S SYSTEMS
@@ -16,7 +15,7 @@ N Advanced Software Engineering Practices (H)
 A ASEP
 S SYSTEMS
 C
-R 
+R
 # Prerequisites: JP2, OOSE, PSD, Placement (can be unassessed)
 
 N Advanced System Programming (M)
@@ -97,7 +96,7 @@ N Database Systems (H)
 A DB
 S DATASCIENCE
 C IR
-R 
+R
 # Requires JP2, OOSE2, WAD2
 
 N Data Fundamentals (H)
@@ -127,7 +126,7 @@ R
 N Functional Programming (H)
 A FP
 S SYSTEMS, THEORY
-C 
+C
 R
 
 N Human-Centred Security (M)
@@ -151,7 +150,7 @@ R DF, TD
 N Interactive Systems (H)
 A IS
 S MANDATORY
-C 
+C
 R
 
 N Machine Learning (H)
@@ -169,14 +168,14 @@ R IS
 N Network Systems (H)
 A NS
 S SYSTEMS
-C 
+C
 R SP
 # Prerequisites: ADS2, CS2, JP2, OOSE2. OS recommended
 
 N Operating Systems (H)
 A OS
 S SYSTEMS
-C 
+C
 R SP
 # Prerequisites: ADS2, CS2, JP2, OOSE2. NS recommended
 
@@ -225,7 +224,7 @@ R ALGI
 N Web Science (H)
 A WS
 S DATASCIENCE
-C 
+C
 R
 
 END
