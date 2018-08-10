@@ -5,8 +5,7 @@
 # C-O-URSOR V1.0 -- with an interactive menu
 
 from functions import *
-
-courses = Course.courses
+from course import *
 
 # command input to functions
 options = {"info": course_info, "clash": clash, "req": requires,
@@ -14,7 +13,10 @@ options = {"info": course_info, "clash": clash, "req": requires,
            "remove": remove_choices, "reset": reset}
 
 # print available honours courses
-for c1,c2,c3 in zip(courses[::3],courses[1::3], courses[2::3]):
+clist = []
+for i in sorted(courses):
+    clist.append(courses[i]["name"] + " " + i)
+for c1,c2,c3 in zip(clist[::3], clist[1::3], clist[2::3]):
     print '{:<55}{:<55}{:<}'.format(c1,c2,c3)
 
 # start interaction

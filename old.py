@@ -30,7 +30,7 @@ def make_course(name, acronym, strand, year, clashes=None, req=None, comment=Non
 
 
 # COURSE FILE READING
-# transcripted from the school's course list by myself
+# transcribed from the school's course list by myself
 # Format:
 # N Name
 # A Acronym

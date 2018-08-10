@@ -1,9 +1,6 @@
-from course import Course
+from course import *
 
-courses = Course.courses
 choices = []
-acronyms_input = []
-
 
 def get_option():
     print("\nWhat do you want to do now?")
@@ -21,38 +18,36 @@ def get_option():
 
 
 def add_choices():
-    acronyms_input = raw_input("Please enter the acronyms of your courses of interests, comma separated: ").replace(" ", "").split(",")
+    input = raw_input("Please enter the acronyms of your courses of interests, comma separated: ").replace(" ", "").split(",")
 
     # GET COURSE INSTANCES
-    for a in acronyms_input:
+    for a in input:
         found = False
-        for course in courses:
-            if a == course.acronym:
-                choices.append(course)
-                found = True
+        if a in courses:
+            choices.append(a)
+            found = True
         if not found:
             print("\nThe acronym " + a + " doesn't seem to match any courses.")
-            acronyms_input.remove(a)
 
 
 def remove_choices():
-    acro = raw_input("Please enter the courses you want to delete from your choices (acronyms, comma-separated): ").replace(" ", "").split(",")
-    for a in acro:
-        if a in acronyms_input:
-            acronyms_input.remove(a)
+    input = raw_input("Please enter the courses you want to delete from your choices (acronyms, comma-separated): ").replace(" ", "").split(",")
+    for a in input:
+        if a in choices:
+            choices.remove(a)
         else:
             print(a + "isn't a correct course acronym or was not in your choices.")
 
 
 def course_info():
     a = raw_input("Enter course acronym: ").strip()
-    for c in courses:
-        if a == c.acronym:
-            print("{} {}\n"
-                  "clashes with: {}\n"
-                  "requires: {}\n"
-                  "year, semester: {}\n"
-                  "{}\n").format(c.name, c.strand, c.clashes, c.req, c.year, c.comment)
+    if a in courses:
+        print("{} {}\n"
+            "clashes with: {}\n"
+            "requires: {}\n"
+            "year, semester: {}\n"
+            "{}\n").format(courses[a]["name"], courses[a]["strand"], courses[a]["clashes"],
+                           courses[a]["req"], courses[a]["year"], courses[a]["comment"])
 
 
 def clash():
@@ -63,10 +58,10 @@ def clash():
     for choice1 in choices:
         for choice2 in choices:
             # this compares acronym pairs in order not to repeat clashes
-            if choice1.clashes and choice2.acronym in choice1.clashes \
-                    and choice2.acronym+choice1.acronym not in done:
-                clashes += str(choice1) + " and " + str(choice2) + " clash\n"
-                done.append(choice1.acronym+choice2.acronym)
+            if courses[choice1]["clashes"] and choice2 in courses[choice1]["clashes"] \
+                    and choice2+choice1 not in done:
+                clashes += courses[choice1]["name"] + " and " + courses[choice2]["name"] + " clash\n"
+                done.append(choice1+choice2)
 
     if clashes:
         print(clashes)
@@ -79,15 +74,15 @@ def requires():
     requirements = ""
 
     for choice in choices:
-        if choice.req:
+        if courses[choice]["req"]:
             req_list = []
             missing = True
-            for req in choice.req:
-                if req not in acronyms_input:
+            for req in courses[choice]["req"]:
+                if req not in choices:
                     req_list.append(req)
                     missing = False
             if not missing:
-                requirements += "You need to take " + str(req_list) + " for " + str(choice) + "\n"
+                requirements += "You need to take " + str(req_list) + " for " + courses[choice]["name"] + "\n"
 
     if requirements:
         print(requirements)
@@ -98,11 +93,10 @@ def requires():
 def get_credits():
     tc = fc = 0
 
-    # TODO: figure out mandatory courses issue
     for c in choices:
-        if c.year[0] == '34':
+        if courses[c]["year"][0] == '34' and courses[c]["year"][1] != '1':
             tc += 10
-        elif c.year[0] == '4':
+        elif courses[c]["year"][0] == '4':
             fc += 10
     if (tc == 30 or tc == 40) and (fc == 60 or fc == 70):
         print("Right amount of credits. You're all good! \n")
@@ -115,5 +109,4 @@ def get_credits():
 
 def reset():
     choices[:] = []
-    acronyms_input[:] = []
     print("Choices reset. Add more courses now or consult more information! ")

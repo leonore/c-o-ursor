@@ -1,26 +1,10 @@
 # Storage structure for courses
-# TODO: would a dictionary work better?
-class Course:
-
-    courses = []
-
-    def __init__(self, name, acronym, strand, year, clashes=None, req=None, comment=None):
-        self.name = name
-        self.acronym = acronym
-        self.strand = strand # strand of specialisation (1 or 2 of 5) or MANDATORY for CSH students
-        self.clashes = clashes # any clashes with other courses
-        self.req = req # any prerequisites for the course
-        self.year = year # when does this course run
-        self.comment = comment # reports recommended courses rather than mandatory ones (not used in V0.1)
-        self.courses.append(self) # stores each course in a list for future use
-
-    def __str__(self):
-        return '{} ({})'.format(self.name, self.acronym)
+courses = {}
 
 
 def make_course(name, acronym, strand, year, clashes=None, req=None, comment=None):
-    return Course(name, acronym, strand, year, clashes, req, comment)
-
+    courses[acronym] = {"name": name, "strand": strand, "year": year,
+                        "clashes": clashes, "req": req, "comment": comment}
 
 # COURSE FILE READING
 # transcribed from the school's course list by myself
@@ -61,3 +45,4 @@ for line in lines:
         year = line.strip("Y").strip().replace(" ", "").split(",")
     elif line[0] == "#" and len(line) > 3:
         comment = line.strip()
+
