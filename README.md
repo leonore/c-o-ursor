@@ -1,11 +1,11 @@
 # C-O-URSOR :thought_balloon::books:
-```V1.0```
+```V1.1```
 c-o-ursor is an evolving program to try and help with **Honours courses decision-making** @ **UofG** 
 <br /> *(this will only work fully for **CSH** students just now)*
 <br />Disclaimer: all the information used has been found on the School of Computing Science's provided documents. I could be wrong!
 
 ### Requirements
-This should work with both Python 2.6+ and Python 3, but do report any problems you encounter!
+This will work with Python 2.7, but needs adjustments for Python 3.
 
 ### Running the program
 * Clone this repository
