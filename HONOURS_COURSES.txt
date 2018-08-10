@@ -3,12 +3,14 @@ A ANC
 S SYSTEMS
 C 
 R NS
+Y 4, 2
 
 N Advanced Network Systems (H)
 A ANS
 S SYSTEMS
 C 
 R
+Y 4, 1
 # Prerequisites: NS, OS, SP (starting next year)?
 
 N Advanced Software Engineering Practices (H)
@@ -16,6 +18,7 @@ A ASEP
 S SYSTEMS
 C
 R
+Y 4, 12
 # Prerequisites: JP2, OOSE, PSD, Placement (can be unassessed)
 
 N Advanced System Programming (M)
@@ -23,80 +26,94 @@ A ASP
 S SYSTEMS
 C ITA, DL
 R SP, OS, NS, FP
+Y 4, 2
 
 N Algorithmics I (H)
 A ALGI
 S MANDATORY
 C
 R
+Y 34, 1
 
 N Algorithmics II (H)
 A ALGII
 S THEORY
 C DPT
 R
+Y 4, 1
 
 N Artificial Intelligence (H)
 A AI
 S DATASCIENCE
 C RS, RF
 R DF
+Y 34, 2
+# To confirm: course list says S1 but all other info points to S2
 
 N Big Data (H)
 A BD
 S DATASCIENCE
 C 
 R DF, DB
+Y 4, 2
 # DPT is strongly recommended
 
 N Computational Social Intelligence (H)
 A CSI
 S HUMANCOMPUTERINTERACTION
-C 
+C
 R 
+Y 4, 1
 # Recommended: AI, DF, ML
 
 N Computer Architecture (H)
 A CA
 S SYSTEMS
-C 
+C
 R OS
+Y 4, 1
 
 N Computer Vision Methods and Applications (H)
 A CVMA
 S DATASCIENCE
 C
 R DF
+Y 4, 1
 
 N Constraint Programming (M)
 A CP
 S THEORY
 C CSF
 R
+Y 34, 2
 
 N Cryptography and Secure Development (M)
 A CSD
 S SECURITY
 C ML, RF
 R CSFu
+Y 4, 2
 
 N Cyber Security Forensics (M)
 A CSFo
 S SECURITY
 C CP
 R
+Y 34, 2
 
 N Cyber Security Fundamentals (H)
 A CSFu
 S SECURITY
 C ITA
 R
+Y 34, 2
 
 N Database Systems (H)
 A DB
 S DATASCIENCE
 C IR
 R
+Y 34, 2
 # Requires JP2, OOSE2, WAD2
 
 N Data Fundamentals (H)
@@ -104,72 +121,86 @@ A DF
 S MANDATORY
 C
 R
+Y 34, 1
+# Compulsory in LEVEL 3 for CSH
 
 N Deep Learning (M)
 A DL
 S DATASCIENCE
 C ITA, ASP
 R DF, ML
+Y 4, 2
 
 N Distributed Parallel Technologies (H)
 A DPT
 S SYSTEMS
 C ALGII
 R SP
+Y 4, 1
 
 N Enterprise Cyber Security (M)
 A ECS
 S SECURITY
 C 
 R
+Y 4, 1
 
 N Functional Programming (H)
 A FP
 S SYSTEMS, THEORY
 C
 R
+Y 4, 1
 
 N Human-Centred Security (M)
 A HCS
 S HUMANCOMPUTERINTERACTION
 C 
 R
+Y 34, 2
 
 N Human Computer Interaction (H)
 A HCI
 S HUMANCOMPUTERINTERACTION
 C PL, TC, TD
 R IS
+Y 4, 1
 
 N Information Retrieval (H)
 A IR
 S DATASCIENCE
 C DB
 R DF, TD
+Y 4, 2
 
 N Interactive Systems (H)
 A IS
 S MANDATORY
 C
 R
+Y 34, 1
+# Compulsory in LEVEL 3 for CSH
 
 N Machine Learning (H)
 A ML
 S DATASCIENCE, THEORY
 C CSD, RF
 R DF
+Y 4, 2
 
 N Mobile Human-Computer Interaction (H)
 A MobHCI
 S HUMANCOMPUTERINTERACTION
 C TD
 R IS
+Y 34, 2
 
 N Network Systems (H)
 A NS
 S SYSTEMS
 C
 R SP
+Y 34, 2
 # Prerequisites: ADS2, CS2, JP2, OOSE2. OS recommended
 
 N Operating Systems (H)
@@ -177,13 +208,21 @@ A OS
 S SYSTEMS
 C
 R SP
+Y 34, 2
 # Prerequisites: ADS2, CS2, JP2, OOSE2. NS recommended
+
+N Professional Skills and Issues H
+A PSI
+S MANDATORY
+Y 4, 1
+# Compulsory in LEVEL 4 for CSH
 
 N Programming Languages (H)
 A PL
 S THEORY
 C HCI
 R
+Y 34, 2
 # Requires JP2, OOSE2
 
 N Recommender Systems (H)
@@ -191,40 +230,45 @@ A RS
 S DATASCIENCE
 C AI, RF
 R DF, TD
+Y 4, 2
 
 N Robotics Foundations (H)
 A RF
 S DATASCIENCE
 C AI, RS
 R DF
+Y 34, 2
 
 N Safety Critical Systems (H)
 A SCS
 S SECURITY
 C
+Y 4, 2
 
 N Systems Programming (H)
 A SP
 S MANDATORY
 C
 R
+Y 34, 1
 
 N Text as Data (H)
 A TD
 S DATASCIENCE
 C MobHCI
 R DF
+Y 34, 2
 
 N Theory of Computation (H)
 A TC
 S THEORY
 C HCI
 R ALGI
+Y 4, 1
 
 N Web Science (H)
 A WS
 S DATASCIENCE
 C
 R
-
-END
+Y 4, 1
