@@ -5,22 +5,18 @@
 # C-O-URSOR V1.2 -- with an interactive menu, improved
 
 from functions import *
-from course import *
 
 # command input to functions
 options = {"info": course_info, "clash": clash, "req": requires,
            "cred": get_credits, "display": display, "add": add_choices,
-           "remove": remove_choices, "reset": reset}
+           "remove": remove_choices, "reset": reset, "list": list_courses,
+           "strand": strand, "full": full}
 
-# print available honours courses
-clist = []
-for i in sorted(courses):
-    clist.append(courses[i]["name"] + " " + i)
-for c1,c2,c3 in zip(clist[::3], clist[1::3], clist[2::3]):
-    print '{:<55}{:<55}{:<}'.format(c1,c2,c3)
+# print available honours courses & strands
+list_courses()
 
 # start interaction
-print("\nThis program assumes you have an idea of what courses you want to take during the semester.\n"
+print("\n\nThis program assumes you have an idea of what courses you want to take during the semester.\n"
       "Consult given course specs for more information about the available choices.\n")
 
 first_input = raw_input("Please enter the acronyms of your courses of interests, comma separated: ")

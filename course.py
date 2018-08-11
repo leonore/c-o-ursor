@@ -6,6 +6,7 @@ def make_course(name, acronym, strand, year, clashes=None, req=None, comment=Non
     courses[acronym] = {"name": name, "strand": strand, "year": year,
                         "clashes": clashes, "req": req, "comment": comment}
 
+
 # COURSE FILE READING
 # transcribed from the school's course list by myself
 # Format:
@@ -17,6 +18,9 @@ def make_course(name, acronym, strand, year, clashes=None, req=None, comment=Non
 # Y semesters the course runs
 # # comment
 # Credits are always 10
+
+strands = {'DATASCIENCE': 0, 'HUMANCOMPUTERINTERACTION': 0,
+           'SYSTEMS': 0, 'SECURITY': 0, 'THEORY': 0, 'MANDATORY': 0}
 
 f = open("HONOURS_COURSES.txt", "r")
 lines = f.readlines()
@@ -44,5 +48,4 @@ for line in lines:
     elif line[0] == "Y":
         year = line.strip("Y").strip().replace(" ", "").split(",")
     elif line[0] == "#" and len(line) > 3:
-        comment = line.strip()
-
+        comment = line.strip("#").strip()
