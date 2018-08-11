@@ -1,9 +1,9 @@
 # C-O-URSOR :thought_balloon::books:
-```V1.1```
+```V1.2```
 c-o-ursor is an evolving program to try and help with **Honours courses decision-making** @ **UofG** 
 <br /> *(this will only work fully for **CSH** students just now)*
 
-###Disclaimer: 
+### Disclaimer
 All the information used has been found on the [School of Computing Science's provided documents](https://moodle.gla.ac.uk/pluginfile.php/1594052/mod_resource/content/1/Level3-Enrolment-2018.pdf). I could be wrong!
 <br /> Please report any bugs or misinformation you find!
 
