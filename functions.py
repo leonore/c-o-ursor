@@ -2,45 +2,44 @@ from course import *
 
 choices = []
 
+
 def get_option():
     print("\nWhat do you want to do now?")
-    print(  # TODO "full   >>> run a full analysis\n"
-          "info     >>> get more information about a course\n"
+    print(  # TODO "full   >>> run a full analysis\n = clash, req, cred. strand check?"
+            # TODO "strand   >>> display courses for a specified strand\n"
+          "info     >>> get more information about a course (include acronym)\n"
+          "add      >>> add 1+ course to my choices (list your choices)\n"
+          "remove   >>> remove 1+ course from my choices (list your choices)\n"
+          "display  >>> current list of choices\n""reset    >>> reset your choices\n"
           "clash    >>> check for clashes\n"
-          "req      >>> check for missing requirements\n"
           "cred     >>> check for number of credits\n"
-          # TODO "strand   >>> display courses for a specified strand\n"
-          "add      >>> add 1+ course to my choices\n"
-          "remove   >>> remove 1+ course from my choices\n"
-          "reset    >>> reset your choices\n"
+          "req      >>> check for missing requirements\n"
           "stop     >>> terminate program\n")
     return raw_input("Enter command: ").strip()
 
 
-def add_choices():
-    input = raw_input("Please enter the acronyms of your courses of interests, comma separated: ").replace(" ", "").split(",")
-
-    # GET COURSE INSTANCES
-    for a in input:
+def add_choices(acronyms):
+    acronyms = acronyms.replace(" ", "").split(",")
+    for a in acronyms:
         found = False
-        if a in courses:
+        if a in courses and a not in choices:
             choices.append(a)
             found = True
         if not found:
-            print("\nThe acronym " + a + " doesn't seem to match any courses.")
+            print("\nThe acronym " + a + " doesn't seem to match any courses or is already in your choices.")
 
 
-def remove_choices():
-    input = raw_input("Please enter the courses you want to delete from your choices (acronyms, comma-separated): ").replace(" ", "").split(",")
-    for a in input:
+def remove_choices(acronyms):
+    acronyms = acronyms.replace(" ", "").split(",")
+    for a in acronyms:
         if a in choices:
             choices.remove(a)
         else:
             print(a + "isn't a correct course acronym or was not in your choices.")
 
 
-def course_info():
-    a = raw_input("Enter course acronym: ").strip()
+def course_info(a):
+
     if a in courses:
         print("{} {}\n"
             "clashes with: {}\n"
@@ -102,9 +101,16 @@ def get_credits():
         print("Right amount of credits. You're all good! \n")
     else:
         print("You haven't chosen the right amount of credits.\n"
-              "Here's where you stand: \n"
+              "Here's where you stand (mandatory courses excl.): \n"
               "{} credits for level 3, need 30 or 40\n"
               "{} credits for level 4, need 60 or 70").format(tc, fc)
+
+
+def display():
+    print "Current choices: "
+    for x in choices:
+        print x,
+    print "\n"
 
 
 def reset():
