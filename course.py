@@ -19,8 +19,8 @@ def make_course(name, acronym, strand, year, clashes=None, req=None, comment=Non
 # # comment
 # Credits are always 10
 
-strands = {'DATASCIENCE': 0, 'HUMANCOMPUTERINTERACTION': 0,
-           'SYSTEMS': 0, 'SECURITY': 0, 'THEORY': 0, 'MANDATORY': 0}
+strands = {'DATASCIENCE': 0, 'HCI': 0, 'SYSTEMS': 0,
+           'SECURITY': 0, 'THEORY': 0, 'MANDATORY': 0}
 
 f = open("HONOURS_COURSES.txt", "r")
 lines = f.readlines()

@@ -69,6 +69,7 @@ def strand(s):
                 course_info(c)
     else:
         print "Strand {} does not exist!".format(s)
+    print "\n"
 
 
 def count_strand():
@@ -100,8 +101,11 @@ def clash():
 def requires():
     print("\nComputing prerequisites...")
     requirements = ""
+    mc = 0
 
     for choice in choices:
+        if courses[choice]["name"][-2] == 'M' and courses[choice]["year"][0] == "34":
+            mc += 1
         if courses[choice]["req"]:
             req_list = []
             missing = True
@@ -116,6 +120,8 @@ def requires():
         print(requirements)
     else:
         print("You fit all prerequisites for your courses!")
+    if mc > 1:
+        print("Careful, you can only take one M course in level 3.")
 
 
 def get_credits():

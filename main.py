@@ -33,7 +33,7 @@ while running:
         args += temp[1:]
     else:
         cmd = temp
-    if cmd in options:
+    if cmd.lower() in options:
         try:
             options[cmd](*args)
         except Exception as error:
