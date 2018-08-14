@@ -121,7 +121,8 @@ def requires():
     else:
         print("You fit all prerequisites for your courses!")
     if mc > 1:
-        print("Careful, you can only take one M course in level 3.")
+        print("Careful, you can only take one M course in level 3 and at most 2 M courses in general.")
+
 
 
 def get_credits():
@@ -159,3 +160,9 @@ def full():
 def reset():
     choices[:] = []
     print("Choices reset. Add more courses now or consult more information! ")
+
+# command input to functions
+options = {"info": course_info, "clash": clash, "req": requires,
+           "cred": get_credits, "display": display, "add": add_choices,
+           "remove": remove_choices, "reset": reset, "list": list_courses,
+           "strand": strand, "full": full}

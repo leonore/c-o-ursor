@@ -60,7 +60,7 @@ Y 4, 2
 
 N Computational Social Intelligence (H)
 A CSI
-S HUMANCOMPUTERINTERACTION
+S HCI
 C
 R 
 Y 4, 1
@@ -154,14 +154,14 @@ Y 4, 1
 
 N Human-Centred Security (M)
 A HCS
-S HUMANCOMPUTERINTERACTION
+S HCI
 C 
 R
 Y 34, 2
 
 N Human Computer Interaction (H)
 A HCI
-S HUMANCOMPUTERINTERACTION
+S HCI
 C PL, TC, TD
 R IS
 Y 4, 1
@@ -186,11 +186,11 @@ A ML
 S DATASCIENCE, THEORY
 C CSD, RF
 R DF
-Y 4, 2
+Y 4, 1
 
 N Mobile Human-Computer Interaction (H)
 A MobHCI
-S HUMANCOMPUTERINTERACTION
+S HCI
 C TD
 R IS
 Y 34, 2

@@ -6,12 +6,6 @@
 
 from functions import *
 
-# command input to functions
-options = {"info": course_info, "clash": clash, "req": requires,
-           "cred": get_credits, "display": display, "add": add_choices,
-           "remove": remove_choices, "reset": reset, "list": list_courses,
-           "strand": strand, "full": full}
-
 # print available honours courses & strands
 list_courses()
 
