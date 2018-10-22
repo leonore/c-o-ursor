@@ -28,10 +28,13 @@ while running:
     else:
         cmd = temp
     if cmd.lower() in options:
-        try:
-            options[cmd](*args)
-        except Exception as error:
-            print(repr(error))
+        if not choices and (cmd.lower() not in ["add", "list"]):
+            print("You haven't added any choices yet. Try the add command first")
+        else:
+            try:
+                options[cmd](*args)
+            except Exception as error:
+                print(repr(error))
     elif cmd == "stop":
         running = False
     else:

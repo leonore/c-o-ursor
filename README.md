@@ -1,5 +1,5 @@
 # C-O-URSOR :thought_balloon::books:
-```V1.2```
+```V1.2.1```
 c-o-ursor is an evolving program to try and help with **Honours courses decision-making** @ **UofG** 
 <br /> *(this will only work fully for **CSH** students just now)*
 
