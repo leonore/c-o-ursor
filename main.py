@@ -13,7 +13,7 @@ list_courses()
 print("\n\nThis program assumes you have an idea of what courses you want to take during the semester.\n"
       "Consult given course specs for more information about the available choices.\n")
 
-first_input = raw_input("Please enter the acronyms of your courses of interests, comma separated: ")
+first_input = input("Please enter the acronyms of your courses of interests, comma separated: ")
 add_choices(first_input)
 running = True
 

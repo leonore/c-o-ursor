@@ -17,7 +17,7 @@ def get_option():
           "cred         >>> check for number of credits\n"
           "req          >>> check for missing requirements\n"
           "stop         >>> terminate program\n")
-    return raw_input("Enter command: ").strip()
+    return input("Enter command: ").strip()
 
 
 def list_courses():
@@ -25,10 +25,11 @@ def list_courses():
     for i in sorted(courses):
         clist.append(courses[i]["name"] + " " + i)
     for c1, c2, c3 in zip(clist[::3], clist[1::3], clist[2::3]):
-        print '{:<55}{:<55}{:<}'.format(c1, c2, c3)
-    print "\nAvailable strands: ",
+        print('{:<55}{:<55}{:<}'.format(c1, c2, c3))
+    print("\nAvailable strands: ",)
     for strand in strands:
-        if strand != "MANDATORY": print strand,
+        if strand != "MANDATORY":
+            print(strand,)
 
 
 def add_choices(acronyms):
@@ -68,15 +69,15 @@ def strand(s):
             if s in courses[c]["strand"]:
                 course_info(c)
     else:
-        print "Strand {} does not exist!".format(s)
-    print "\n"
+        print("Strand {} does not exist!".format(s))
+    print("\n")
 
 
 def count_strand():
     for c in choices:
         for s in courses[c]["strand"]:
             strands[s] += 1
-    print "Your preferred strands seems to be {}\n".format(max(strands, key=strands.get))
+    print("Your preferred strands seems to be {}\n".format(max(strands, key=strands.get)))
 
 
 def clash():
@@ -129,6 +130,7 @@ def get_credits():
     tc = fc = 0
 
     for c in choices:
+        print(courses[c])
         if courses[c]["year"][0] == '34' and courses[c]["year"][1] != '1':
             tc += 10
         elif courses[c]["year"][0] == '4':
@@ -136,17 +138,17 @@ def get_credits():
     if (tc == 30 or tc == 40) and (fc == 60 or fc == 70):
         print("Right amount of credits. You're all good! \n")
     else:
-        print("You haven't chosen the right amount of credits.\n"
-              "Here's where you stand (mandatory courses excl.): \n"
-              "{} credits for level 3, need 30 or 40\n"
-              "{} credits for level 4, need 60 or 70").format(tc, fc)
+        print(""" You haven't chosen the right amount of credits.\n
+              Here's where you stand (mandatory courses excl.): \n
+              {} credits for level 3, need 30 or 40\n
+              {} credits for level 4, need 60 or 70 """.format(tc, fc))
 
 
 def display():
-    print "Current choices: "
+    print("Current choices: ")
     for x in choices:
-        print x,
-    print "\n"
+        print(x,)
+    print("\n")
 
 
 def full():
